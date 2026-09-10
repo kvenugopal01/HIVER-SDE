@@ -1,0 +1,675 @@
+{
+  "results_table": [
+    {
+      "System": "Trivial Baseline (Majority Class)",
+      "Intent Accuracy": 0.795,
+      "Macro F1": 0.0886,
+      "Auto-handle %": 100.0,
+      "Escalation Quality (F1)": 0.0,
+      "Reply Quality (Judge)": 2.1
+    },
+    {
+      "System": "Simple Baseline (TF-IDF + LogReg)",
+      "Intent Accuracy": 0.83,
+      "Macro F1": 0.5848,
+      "Auto-handle %": 100.0,
+      "Escalation Quality (F1)": 0.0,
+      "Reply Quality (Judge)": 3.25
+    },
+    {
+      "System": "Proposed System (Calibrated Hybrid Agent)",
+      "Intent Accuracy": 0.83,
+      "Macro F1": 0.5848,
+      "Auto-handle %": 56.5,
+      "Escalation Quality (F1)": 0.3893,
+      "Reply Quality (Judge)": 4.65
+    }
+  ],
+  "baseline1_metrics": {
+    "classification": {
+      "accuracy": 0.795,
+      "macro_precision": 0.0795,
+      "macro_recall": 0.1,
+      "macro_f1": 0.0886,
+      "per_intent": {
+        "ACCOUNT_APPLE_ID_ICLOUD": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 7
+        },
+        "AUDIO_MEDIA_PLAYBACK": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        },
+        "BATTERY_POWER": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 8
+        },
+        "BILLING_APP_STORE_PURCHASE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "CONNECTIVITY_WIFI_BT": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 4
+        },
+        "GENERAL_ENQUIRY_OTHER": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 3
+        },
+        "HARDWARE_PHYSICAL_DAMAGE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 10
+        },
+        "OS_UPDATE_BUG": {
+          "precision": 0.795,
+          "recall": 1.0,
+          "f1": 0.8858,
+          "support": 159
+        },
+        "PERFORMANCE_LAG": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "SYNC_BACKUP_RESTORE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        }
+      },
+      "labels": [
+        "ACCOUNT_APPLE_ID_ICLOUD",
+        "AUDIO_MEDIA_PLAYBACK",
+        "BATTERY_POWER",
+        "BILLING_APP_STORE_PURCHASE",
+        "CONNECTIVITY_WIFI_BT",
+        "GENERAL_ENQUIRY_OTHER",
+        "HARDWARE_PHYSICAL_DAMAGE",
+        "OS_UPDATE_BUG",
+        "PERFORMANCE_LAG",
+        "SYNC_BACKUP_RESTORE"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          159,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ]
+    },
+    "escalation": {
+      "auto_handle_pct": 100.0,
+      "escalation_precision": 0.0,
+      "escalation_recall": 0.0,
+      "escalation_f1": 0.0
+    }
+  },
+  "baseline2_metrics": {
+    "classification": {
+      "accuracy": 0.83,
+      "macro_precision": 0.5048,
+      "macro_recall": 0.7611,
+      "macro_f1": 0.5848,
+      "per_intent": {
+        "ACCOUNT_APPLE_ID_ICLOUD": {
+          "precision": 0.6364,
+          "recall": 1.0,
+          "f1": 0.7778,
+          "support": 7
+        },
+        "AUDIO_MEDIA_PLAYBACK": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571,
+          "support": 6
+        },
+        "BATTERY_POWER": {
+          "precision": 0.7273,
+          "recall": 1.0,
+          "f1": 0.8421,
+          "support": 8
+        },
+        "BILLING_APP_STORE_PURCHASE": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1": 0.4,
+          "support": 1
+        },
+        "CONNECTIVITY_WIFI_BT": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.8889,
+          "support": 4
+        },
+        "GENERAL_ENQUIRY_OTHER": {
+          "precision": 0.4286,
+          "recall": 1.0,
+          "f1": 0.6,
+          "support": 3
+        },
+        "HARDWARE_PHYSICAL_DAMAGE": {
+          "precision": 0.4706,
+          "recall": 0.8,
+          "f1": 0.5926,
+          "support": 10
+        },
+        "OS_UPDATE_BUG": {
+          "precision": 0.9847,
+          "recall": 0.8113,
+          "f1": 0.8897,
+          "support": 159
+        },
+        "PERFORMANCE_LAG": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "SYNC_BACKUP_RESTORE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        }
+      },
+      "labels": [
+        "ACCOUNT_APPLE_ID_ICLOUD",
+        "AUDIO_MEDIA_PLAYBACK",
+        "BATTERY_POWER",
+        "BILLING_APP_STORE_PURCHASE",
+        "CONNECTIVITY_WIFI_BT",
+        "GENERAL_ENQUIRY_OTHER",
+        "HARDWARE_PHYSICAL_DAMAGE",
+        "OS_UPDATE_BUG",
+        "PERFORMANCE_LAG",
+        "SYNC_BACKUP_RESTORE"
+      ],
+      "confusion_matrix": [
+        [
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          8,
+          1,
+          0,
+          0
+        ],
+        [
+          4,
+          1,
+          3,
+          3,
+          1,
+          3,
+          9,
+          129,
+          3,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "escalation": {
+      "auto_handle_pct": 100.0,
+      "escalation_precision": 0.0,
+      "escalation_recall": 0.0,
+      "escalation_f1": 0.0
+    }
+  },
+  "proposed_metrics": {
+    "classification": {
+      "accuracy": 0.83,
+      "macro_precision": 0.5048,
+      "macro_recall": 0.7611,
+      "macro_f1": 0.5848,
+      "per_intent": {
+        "ACCOUNT_APPLE_ID_ICLOUD": {
+          "precision": 0.6364,
+          "recall": 1.0,
+          "f1": 0.7778,
+          "support": 7
+        },
+        "AUDIO_MEDIA_PLAYBACK": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571,
+          "support": 6
+        },
+        "BATTERY_POWER": {
+          "precision": 0.7273,
+          "recall": 1.0,
+          "f1": 0.8421,
+          "support": 8
+        },
+        "BILLING_APP_STORE_PURCHASE": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1": 0.4,
+          "support": 1
+        },
+        "CONNECTIVITY_WIFI_BT": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.8889,
+          "support": 4
+        },
+        "GENERAL_ENQUIRY_OTHER": {
+          "precision": 0.4286,
+          "recall": 1.0,
+          "f1": 0.6,
+          "support": 3
+        },
+        "HARDWARE_PHYSICAL_DAMAGE": {
+          "precision": 0.4706,
+          "recall": 0.8,
+          "f1": 0.5926,
+          "support": 10
+        },
+        "OS_UPDATE_BUG": {
+          "precision": 0.9847,
+          "recall": 0.8113,
+          "f1": 0.8897,
+          "support": 159
+        },
+        "PERFORMANCE_LAG": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "SYNC_BACKUP_RESTORE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        }
+      },
+      "labels": [
+        "ACCOUNT_APPLE_ID_ICLOUD",
+        "AUDIO_MEDIA_PLAYBACK",
+        "BATTERY_POWER",
+        "BILLING_APP_STORE_PURCHASE",
+        "CONNECTIVITY_WIFI_BT",
+        "GENERAL_ENQUIRY_OTHER",
+        "HARDWARE_PHYSICAL_DAMAGE",
+        "OS_UPDATE_BUG",
+        "PERFORMANCE_LAG",
+        "SYNC_BACKUP_RESTORE"
+      ],
+      "confusion_matrix": [
+        [
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          8,
+          1,
+          0,
+          0
+        ],
+        [
+          4,
+          1,
+          3,
+          3,
+          1,
+          3,
+          9,
+          129,
+          3,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "escalation": {
+      "auto_handle_pct": 56.5,
+      "escalation_precision": 0.3333,
+      "escalation_recall": 0.4677,
+      "escalation_f1": 0.3893
+    }
+  },
+  "llm_judge_scores": {
+    "relevance": 5.0,
+    "correctness": 4.5,
+    "groundedness": 4.93,
+    "helpfulness": 4.5,
+    "tone": 4.75,
+    "unsupported_claims": 5.0,
+    "escalation_appropriateness": 3.86,
+    "overall_score": 4.65
+  },
+  "judge_human_agreement": {
+    "status": "COMPLETED",
+    "sample_size": 30,
+    "spearman_correlation": 1.0,
+    "spearman_p_value": 0.0,
+    "cohens_kappa": 0.1388
+  }
+}

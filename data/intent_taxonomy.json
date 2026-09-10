@@ -1,0 +1,134 @@
+{
+  "intents": {
+    "OS_UPDATE_BUG": {
+      "name": "OS Update & Software Bugs",
+      "description": "Issues related to iOS/macOS/watchOS operating system updates, crashes, boot loops, freeze on Apple logo, or software feature changes following an OS update.",
+      "inclusion_rules": "Mentions iOS, macOS, High Sierra, update, upgrade, update crashed, phone froze after update, bug, feature broke after update.",
+      "exclusion_rules": "Exclude pure battery drain unless directly attributed to OS update (label as BATTERY_POWER if primary). Exclude hardware screen cracks.",
+      "keywords": ["update", "ios", "macos", "sierra", "ios11", "software", "bug", "crash", "froze", "apple logo"],
+      "examples": [
+        "My phone completely froze on the Apple logo after updating to iOS 11.",
+        "Is there a way to roll back macOS High Sierra? The media control keys stopped working."
+      ],
+      "approximate_frequency_pct": 28.5,
+      "expected_escalation_default": "AUTO_HANDLE"
+    },
+    "BATTERY_POWER": {
+      "name": "Battery Drain & Power Management",
+      "description": "Rapid battery discharge, phone turning off unexpectedly, overheating, or failure to charge.",
+      "inclusion_rules": "Mentions battery, charge, charging, percentage drop, overheating, battery health, phone dying fast.",
+      "exclusion_rules": "Exclude power button hardware breakage (label as HARDWARE_PHYSICAL_DAMAGE).",
+      "keywords": ["battery", "charge", "drain", "power", "dying", "overheating", "percent", "charging cable"],
+      "examples": [
+        "My iPhone 7 battery drops from 80% to 10% in less than 30 minutes.",
+        "Why is my phone overheating while charging?"
+      ],
+      "approximate_frequency_pct": 19.2,
+      "expected_escalation_default": "AUTO_HANDLE"
+    },
+    "CONNECTIVITY_WIFI_BT": {
+      "name": "Wi-Fi, Bluetooth & Cellular Signal",
+      "description": "Network connectivity issues including Wi-Fi dropping, Bluetooth accessories failing to pair (AirPods/CarPlay), or cellular signal loss.",
+      "inclusion_rules": "Mentions wifi, wi-fi, bluetooth, cellular, 4g, lte, bluetooth drop, airpods disconnect, no service.",
+      "exclusion_rules": "Exclude SIM card physical damage.",
+      "keywords": ["wifi", "wi-fi", "bluetooth", "cellular", "lte", "signal", "airpods", "carplay", "no service", "connection"],
+      "examples": [
+        "My Wi-Fi keeps disconnecting every 5 minutes on my iPad.",
+        "AirPods won't connect via Bluetooth to my Mac."
+      ],
+      "approximate_frequency_pct": 12.4,
+      "expected_escalation_default": "AUTO_HANDLE"
+    },
+    "ACCOUNT_APPLE_ID_ICLOUD": {
+      "name": "Apple ID, Security & iCloud Account",
+      "description": "Locked Apple ID, forgotten passwords, 2-factor authentication issues, iCloud storage limits, or account access problems.",
+      "inclusion_rules": "Mentions Apple ID, iCloud, password, verification code, locked account, 2fa, sign in, cloud storage.",
+      "exclusion_rules": "Exclude App Store billing charges (label as BILLING_APP_STORE_PURCHASE).",
+      "keywords": ["apple id", "icloud", "password", "locked", "verification", "2fa", "security", "login", "account"],
+      "examples": [
+        "My Apple ID has been disabled for security reasons and I can't reset my password.",
+        "iCloud says my storage is full even after deleting photos."
+      ],
+      "approximate_frequency_pct": 10.8,
+      "expected_escalation_default": "ESCALATE"
+    },
+    "HARDWARE_PHYSICAL_DAMAGE": {
+      "name": "Hardware, Screen & Physical Damage",
+      "description": "Physical damage including cracked screens, water damage, broken camera, speaker/microphone hardware failure, or AppleCare repair inquiry.",
+      "inclusion_rules": "Mentions screen cracked, shattered display, dropped in water, speaker quiet/broken, hardware repair, genius bar, applecare.",
+      "exclusion_rules": "Exclude pure software glitch without physical damage.",
+      "keywords": ["screen", "cracked", "shattered", "water damage", "speaker", "mic", "genius bar", "applecare", "repair", "hardware"],
+      "examples": [
+        "I dropped my iPhone X and the screen shattered. How much is screen replacement?",
+        "My phone fell in water and the speaker sounds muffled."
+      ],
+      "approximate_frequency_pct": 8.5,
+      "expected_escalation_default": "ESCALATE"
+    },
+    "AUDIO_MEDIA_PLAYBACK": {
+      "name": "Audio, Apple Music & Media Controls",
+      "description": "Playback issues in Apple Music, iTunes, podcast audio glitches, media key bindings, or sound settings.",
+      "inclusion_rules": "Mentions Apple Music, iTunes playback, sound quality, media keys, volume, podcast, songs grayed out.",
+      "exclusion_rules": "Exclude physical speaker hardware damage.",
+      "keywords": ["music", "itunes", "audio", "playback", "song", "media key", "volume", "playlist", "sound"],
+      "examples": [
+        "All my Apple Music playlists disappeared after the update.",
+        "Why can't I control music playback using my keyboard function keys?"
+      ],
+      "approximate_frequency_pct": 6.8,
+      "expected_escalation_default": "AUTO_HANDLE"
+    },
+    "BILLING_APP_STORE_PURCHASE": {
+      "name": "Billing, App Store & Subscriptions",
+      "description": "Unauthorized charges, refund requests, App Store purchase failures, in-app purchase issues, or payment card declines.",
+      "inclusion_rules": "Mentions App Store, refund, charged twice, subscription, receipt, payment declined, credit card, purchase error.",
+      "exclusion_rules": "Exclude Apple ID account lock (label as ACCOUNT_APPLE_ID_ICLOUD).",
+      "keywords": ["app store", "billing", "refund", "charge", "subscription", "payment", "receipt", "purchase"],
+      "examples": [
+        "I was charged $9.99 for an app subscription I already canceled.",
+        "How do I request a refund for an accidental App Store purchase?"
+      ],
+      "approximate_frequency_pct": 5.2,
+      "expected_escalation_default": "ESCALATE"
+    },
+    "SYNC_BACKUP_RESTORE": {
+      "name": "Backup, Sync & Data Recovery",
+      "description": "Failures during iTunes sync, iCloud backup creation/restore, photo sync, or transferring data to a new device.",
+      "inclusion_rules": "Mentions backup, restore, sync, itunes backup, data transfer, photos sync, device transfer error.",
+      "exclusion_rules": "Exclude cloud storage space inquiry (label as ACCOUNT_APPLE_ID_ICLOUD).",
+      "keywords": ["backup", "restore", "sync", "itunes", "data transfer", "photos sync", "cloud backup"],
+      "examples": [
+        "My iCloud backup failed with error 54 while restoring to my new phone.",
+        "Photos won't sync between my Mac and iPhone."
+      ],
+      "approximate_frequency_pct": 4.1,
+      "expected_escalation_default": "AUTO_HANDLE"
+    },
+    "PERFORMANCE_LAG": {
+      "name": "Performance, Slowness & App Freezes",
+      "description": "General system slowness, UI lag, keyboard typing delay, app unresponsiveness not caused by a specific OS update.",
+      "inclusion_rules": "Mentions slow, lag, laggy, frozen app, slow keyboard, unresponsive, delay.",
+      "exclusion_rules": "Exclude specific OS update crashes (label as OS_UPDATE_BUG).",
+      "keywords": ["slow", "lag", "laggy", "unresponsive", "keyboard delay", "freezing"],
+      "examples": [
+        "My keyboard is lagging terribly when typing in Messages.",
+        "The Settings app takes 10 seconds to open on my iPhone 6s."
+      ],
+      "approximate_frequency_pct": 2.8,
+      "expected_escalation_default": "AUTO_HANDLE"
+    },
+    "GENERAL_ENQUIRY_OTHER": {
+      "name": "General Inquiries & Store Information",
+      "description": "Questions about product launch dates, Apple Store opening hours, general trade-in programs, or non-technical inquiries.",
+      "inclusion_rules": "Mentions store hours, trade-in, release date, stock, store location, general feedback.",
+      "exclusion_rules": "Exclude specific technical support issues.",
+      "keywords": ["store", "trade in", "release date", "stock", "location", "hours", "feedback"],
+      "examples": [
+        "What time does the Fifth Avenue Apple Store open tomorrow?",
+        "Can I trade in an old iPad mini at an Apple Store?"
+      ],
+      "approximate_frequency_pct": 1.7,
+      "expected_escalation_default": "AUTO_HANDLE"
+    }
+  }
+}
